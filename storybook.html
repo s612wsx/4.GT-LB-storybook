@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>維尼的秘密任務 - 祝 Lynna & Belle 4歲生日快樂！</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "PingFang TC", "Microsoft JhengHei", "Comic Sans MS", sans-serif;
+        }
+
+        body {
+            background-color: #fceade;
+            background-image: radial-gradient(#f7d6c8 15%, transparent 16%);
+            background-size: 30px 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .book-container {
+            width: 100%;
+            max-width: 900px;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(180, 100, 50, 0.15);
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            border: 6px solid #fff5ea;
+        }
+
+        .header-title {
+            color: #d96b27;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .page-card {
+            display: none;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .page-card.active {
+            display: flex;
+        }
+
+        .image-wrapper {
+            width: 100%;
+            max-height: 520px;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            border: 4px solid #f9efe6;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 520px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .story-box {
+            background-color: #fff9f2;
+            border: 3px dashed #f2aa7c;
+            border-radius: 16px;
+            padding: 22px 30px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+
+        .story-text {
+            font-size: 1.45rem;
+            color: #4a382a;
+            line-height: 1.8;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            word-break: keep-all; /* 防止中文隨意斷字 */
+            word-wrap: break-word;
+        }
+
+        .highlight-final {
+            color: #d93827;
+            font-size: 1.55rem;
+            font-weight: bold;
+            line-height: 2;
+            animation: pulse 1.5s infinite;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 22px;
+            padding: 0 10px;
+        }
+
+        .btn {
+            background-color: #ff8c42;
+            color: white;
+            border: none;
+            padding: 12px 32px;
+            font-size: 1.15rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(255, 140, 66, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #e87328;
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            background-color: #dddddd;
+            box-shadow: none;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .page-indicator {
+            font-size: 1.15rem;
+            color: #9c7c68;
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 600px) {
+            .story-text {
+                font-size: 1.2rem;
+            }
+            .btn {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="book-container">
+    <div class="header-title">🎈 Lynna & Belle 4歲生日快樂故事繪本 🎈</div>
+
+    <!-- Page 1 -->
+    <div class="page-card active" id="page-1">
+        <div class="image-wrapper"><img src="page1.png" alt="Page 1"></div>
+        <div class="story-box">
+            <p class="story-text">從前從前，有一座軟綿綿的毛線森林。<br>毛線球滾啊滾、鉤針跳啊跳，變出好多可愛的小動物，<br>還有兩隻毛線小熊，一隻叫林林，一隻叫貝貝。</p>
+        </div>
+    </div>
+
+    <!-- Page 2 -->
+    <div class="page-card" id="page-2">
+        <div class="image-wrapper"><img src="page2.png" alt="Page 2"></div>
+        <div class="story-box">
+            <p class="story-text">林林和貝貝手牽手說：<br>「我們去看看外面的世界吧！」<br>牠們沿著彎彎的小路，開開心心地出發了。</p>
+        </div>
+    </div>
+
+    <!-- Page 3 -->
+    <div class="page-card" id="page-3">
+        <div class="image-wrapper"><img src="page3.png" alt="Page 3"></div>
+        <div class="story-box">
+            <p class="story-text">走著走著，肚子咕嚕咕嚕叫。咦？前面是一整片花椰菜森林！<br>林林挑了一顆大大的花椰菜當背包，裝滿新鮮的花椰菜。</p>
+        </div>
+    </div>
+
+    <!-- Page 4 -->
+    <div class="page-card" id="page-4">
+        <div class="image-wrapper"><img src="page4.png" alt="Page 4"></div>
+        <div class="story-box">
+            <p class="story-text">往北再走，飄來好香好香的味道。原來是麵粉村的水餃剛蒸好！<br>貝貝選了一個白白圓圓的水餃包包，裝滿香噴噴的水餃。</p>
+        </div>
+    </div>
+
+    <!-- Page 5 -->
+    <div class="page-card" id="page-5">
+        <div class="image-wrapper"><img src="page5.png" alt="Page 5"></div>
+        <div class="story-box">
+            <p class="story-text">兩隻小熊坐在大樹下休息。<br>這時，一隻小鳥叼著一封閃亮亮的信飛過來：<br>「秘密任務：去找兩個就要 4 歲的小女孩，Lynna 和 Belle，<br>把大家滿滿的祝福送給她們！」</p>
+        </div>
+    </div>
+
+    <!-- Page 6 -->
+    <div class="page-card" id="page-6">
+        <div class="image-wrapper"><img src="page6.png" alt="Page 6"></div>
+        <div class="story-box">
+            <p class="story-text">信上還寫著：「姊姊 Lynna 喜歡花椰菜，妹妹 Belle 喜歡水餃。」<br>小熊們開心地跳起來：「我們包包裡的東西，剛好可以當生日禮物耶！」<br>森林裡 Friend 們也跑來，送上兩個禮物盒。</p>
+        </div>
+    </div>
+
+    <!-- Page 7 -->
+    <div class="page-card" id="page-7">
+        <div class="image-wrapper"><img src="page7.png" alt="Page 7"></div>
+        <div class="story-box">
+            <p class="story-text">一隻彩虹草泥馬跑來說：「上來吧，我載你們去！」<br>牠載著小熊們踩過沙灘、跳過浪花，一路飛進滿天星星裡。</p>
+        </div>
+    </div>
+
+    <!-- Page 8 -->
+    <div class="page-card" id="page-8">
+        <div class="image-wrapper"><img src="page8.png" alt="Page 8"></div>
+        <div class="story-box">
+            <p class="story-text">到了晚上，Lynna 和 Belle 已經睡著了。<br>噓──小熊們輕手輕腳，帶著禮物，悄悄躲進兩個書包裡。</p>
+        </div>
+    </div>
+
+    <!-- Page 9 -->
+    <div class="page-card" id="page-9">
+        <div class="image-wrapper"><img src="page9.png" alt="Page 9"></div>
+        <div class="story-box">
+            <p class="story-text">祝 Lynna 和 Belle 4 歲生日快樂！願你們平安長大。<br>開心的時候，有人陪你一起笑；<br>難過的時候，有人給你大大的抱抱。</p>
+        </div>
+    </div>
+
+    <!-- Page 10 -->
+    <div class="page-card" id="page-10">
+        <div class="image-wrapper"><img src="page10.png" alt="Page 10"></div>
+        <div class="story-box">
+            <p class="story-text highlight-final">🔍 林林和貝貝還在等你們喔！<br>快打開自己的書包，看一看、找一找吧！🎁</p>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="btn" id="prevBtn" onclick="changePage(-1)" disabled>上一頁</button>
+        <span class="page-indicator" id="pageNum">1 / 10</span>
+        <button class="btn" id="nextBtn" onclick="changePage(1)">下一頁</button>
+    </div>
+</div>
+
+<script>
+    let currentPage = 1;
+    const totalPages = 10;
+
+    function changePage(direction) {
+        document.getElementById(`page-${currentPage}`).classList.remove('active');
+        currentPage += direction;
+        
+        if (currentPage < 1) currentPage = 1;
+        if (currentPage > totalPages) currentPage = totalPages;
+
+        document.getElementById(`page-${currentPage}`).classList.add('active');
+        document.getElementById('pageNum').innerText = `${currentPage} / ${totalPages}`;
+
+        document.getElementById('prevBtn').disabled = (currentPage === 1);
+        document.getElementById('nextBtn').disabled = (currentPage === totalPages);
+    }
+
+    // 支援鍵盤左右鍵翻頁
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'ArrowLeft' && currentPage > 1) {
+            changePage(-1);
+        } else if (event.key === 'ArrowRight' && currentPage < totalPages) {
+            changePage(1);
+        }
+    });
+</script>
+
+</body>
+</html>
