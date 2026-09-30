@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate">
-    <title>熊熊們的秘密任務 - 祝 Lynna & Belle 4歲生日快樂！</title>
+    <title>林林和貝貝的秘密任務 - 祝 Lynna & Belle 4歲生日快樂！</title>
     <style>
         * {
             box-sizing: border-box;
@@ -97,8 +97,40 @@
             line-height: 1.8;
             font-weight: 600;
             letter-spacing: 0.5px;
-            word-break: keep-all; /* 防止中文隨意斷字 */
+            word-break: keep-all;
             word-wrap: break-word;
+        }
+
+        .cover-title {
+            font-size: 1.8rem;
+            color: #d9531e;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .cover-subtitle {
+            font-size: 1.2rem;
+            color: #b85b20;
+            font-weight: 600;
+        }
+
+        .start-btn {
+            background-color: #ff6b4a;
+            color: white;
+            border: none;
+            padding: 10px 28px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 12px;
+            box-shadow: 0 4px 12px rgba(255, 107, 74, 0.35);
+            transition: all 0.2s ease;
+        }
+
+        .start-btn:hover {
+            background-color: #e04e2d;
+            transform: scale(1.05);
         }
 
         .highlight-final {
@@ -161,23 +193,29 @@
         }
 
         @media (max-width: 600px) {
-            .story-text {
-                font-size: 1.2rem;
-            }
-            .btn {
-                padding: 10px 20px;
-                font-size: 1rem;
-            }
+            .story-text { font-size: 1.2rem; }
+            .cover-title { font-size: 1.4rem; }
+            .btn { padding: 10px 20px; font-size: 1rem; }
         }
     </style>
 </head>
 <body class="notranslate">
 
 <div class="book-container">
-    <div class="header-title">🎈 熊熊們的秘密任務 🎈<br><span style="font-size: 1.1rem; color: #b85b20;">祝 Lynna & Belle 4歲生日快樂！</span></div>
+    <div class="header-title">🎈 林林和貝貝的秘密任務 🎈<br><span style="font-size: 1.1rem; color: #b85b20;">祝 Lynna & Belle 4歲生日快樂！</span></div>
 
-    <!-- Page 1 -->
+    <!-- Cover Page (Page 0/1) -->
     <div class="page-card active" id="page-1">
+        <div class="image-wrapper"><img src="cover.png" alt="Cover"></div>
+        <div class="story-box">
+            <div class="cover-title notranslate">《林林和貝貝的秘密任務》</div>
+            <div class="cover-subtitle notranslate">祝 Lynna & Belle 4 歲生日快樂 🎁</div>
+            <button class="start-btn" onclick="changePage(1)">開始閱讀 📖</button>
+        </div>
+    </div>
+
+    <!-- Page 1 (Script Page 1) -->
+    <div class="page-card" id="page-2">
         <div class="image-wrapper"><img src="page1.png" alt="Page 1"></div>
         <div class="story-box">
             <p class="story-text notranslate">從前從前，有一座軟綿綿的毛線森林。<br>毛線球滾啊滾、鉤針跳啊跳，變出好多可愛的小動物，<br>還有兩隻毛線小熊，一隻叫林林，一隻叫貝貝。</p>
@@ -185,7 +223,7 @@
     </div>
 
     <!-- Page 2 -->
-    <div class="page-card" id="page-2">
+    <div class="page-card" id="page-3">
         <div class="image-wrapper"><img src="page2.png" alt="Page 2"></div>
         <div class="story-box">
             <p class="story-text notranslate">林林和貝貝手牽手說：<br>「我們去看看外面的世界吧！」<br>牠們沿著彎彎的小路，開開心心地出發了。</p>
@@ -193,7 +231,7 @@
     </div>
 
     <!-- Page 3 -->
-    <div class="page-card" id="page-3">
+    <div class="page-card" id="page-4">
         <div class="image-wrapper"><img src="page3.png" alt="Page 3"></div>
         <div class="story-box">
             <p class="story-text notranslate">走著走著，肚子咕嚕咕嚕叫。咦？前面是一整片花椰菜森林！<br>林林挑了一顆大大的花椰菜當背包，裝滿新鮮的花椰菜。</p>
@@ -201,7 +239,7 @@
     </div>
 
     <!-- Page 4 -->
-    <div class="page-card" id="page-4">
+    <div class="page-card" id="page-5">
         <div class="image-wrapper"><img src="page4.png" alt="Page 4"></div>
         <div class="story-box">
             <p class="story-text notranslate">往北再走，飄來好香好香的味道。原來是麵粉村的水餃剛蒸好！<br>貝貝選了一個白白圓圓的水餃包包，裝滿香噴噴的水餃。</p>
@@ -209,7 +247,7 @@
     </div>
 
     <!-- Page 5 -->
-    <div class="page-card" id="page-5">
+    <div class="page-card" id="page-6">
         <div class="image-wrapper"><img src="page5.png" alt="Page 5"></div>
         <div class="story-box">
             <p class="story-text notranslate">兩隻小熊坐在大樹下休息。<br>這時，一隻小鳥叼著一封閃亮亮的信飛過來：<br>「秘密任務：去找兩個就要 4 歲的小女孩，Lynna 和 Belle，<br>把大家滿滿的祝福送給她們！」</p>
@@ -217,7 +255,7 @@
     </div>
 
     <!-- Page 6 -->
-    <div class="page-card" id="page-6">
+    <div class="page-card" id="page-7">
         <div class="image-wrapper"><img src="page6.png" alt="Page 6"></div>
         <div class="story-box">
             <p class="story-text notranslate">信上還寫著：「姊姊 Lynna 喜歡花椰菜，妹妹 Belle 喜歡水餃。」<br>小熊們開心地跳起來：「我們包包裡的東西，剛好可以當生日禮物耶！」<br>森林裡的朋友們也跑來，送上兩個禮物盒。</p>
@@ -225,15 +263,15 @@
     </div>
 
     <!-- Page 7 -->
-    <div class="page-card" id="page-7">
+    <div class="page-card" id="page-8">
         <div class="image-wrapper"><img src="page7.png" alt="Page 7"></div>
         <div class="story-box">
-            <p class="story-text notranslate">一隻彩虹草泥馬跑來說：「上來吧，我載你們去！」<br>他載著小熊們踩過沙灘、跳過浪花，一路飛進滿天星星裡。</p>
+            <p class="story-text notranslate">一隻彩虹草泥馬跑來說：「上來吧，我載你們去！」<br>牠載著小熊們踩過沙灘、跳過浪花，一路飛進滿天星星裡。</p>
         </div>
     </div>
 
     <!-- Page 8 -->
-    <div class="page-card" id="page-8">
+    <div class="page-card" id="page-9">
         <div class="image-wrapper"><img src="page8.png" alt="Page 8"></div>
         <div class="story-box">
             <p class="story-text notranslate">到了晚上，Lynna 和 Belle 已經睡著了。<br>噓──小熊們輕手輕腳，帶著禮物，悄悄躲進兩個書包裡。</p>
@@ -241,15 +279,15 @@
     </div>
 
     <!-- Page 9 -->
-    <div class="page-card" id="page-9">
+    <div class="page-card" id="page-10">
         <div class="image-wrapper"><img src="page9.png" alt="Page 9"></div>
         <div class="story-box">
-            <p class="story-text notranslate">祝 Lynna 和 Belle 4 歲生日快樂！願你們平安長大。<br>開心的時候，有人陪你一起笑；<br>難過的時候，有人給你大大的抱抱。</p>
+            <p class="story-text notranslate">天快亮了，窗外亮起了小小的燭光。<br>你看！毛線森林的朋友們也來了，還帶來了生日蛋糕！<br>大家一起說：「祝 Lynna 和 Belle 4 歲生日快樂！願你們平安長大。<br>開心的時候，有人陪你一起笑；難過的時候，有人給你大大的抱抱。」</p>
         </div>
     </div>
 
     <!-- Page 10 -->
-    <div class="page-card" id="page-10">
+    <div class="page-card" id="page-11">
         <div class="image-wrapper"><img src="page10.png" alt="Page 10"></div>
         <div class="story-box">
             <p class="story-text highlight-final notranslate">🔍 林林和貝貝還在等你們喔！<br>快打開自己的書包，看一看、找一找吧！🎁</p>
@@ -259,14 +297,14 @@
     <!-- Controls -->
     <div class="controls">
         <button class="btn" id="prevBtn" onclick="changePage(-1)" disabled>上一頁</button>
-        <span class="page-indicator" id="pageNum">1 / 10</span>
+        <span class="page-indicator" id="pageNum">封面 / 10</span>
         <button class="btn" id="nextBtn" onclick="changePage(1)">下一頁</button>
     </div>
 </div>
 
 <script>
     let currentPage = 1;
-    const totalPages = 10;
+    const totalPages = 11;
 
     function changePage(direction) {
         document.getElementById(`page-${currentPage}`).classList.remove('active');
@@ -276,7 +314,14 @@
         if (currentPage > totalPages) currentPage = totalPages;
 
         document.getElementById(`page-${currentPage}`).classList.add('active');
-        document.getElementById('pageNum').innerText = `${currentPage} / ${totalPages}`;
+
+        // 頁碼顯示設定
+        const pageIndicator = document.getElementById('pageNum');
+        if (currentPage === 1) {
+            pageIndicator.innerText = "封面";
+        } else {
+            pageIndicator.innerText = `${currentPage - 1} / 10`;
+        }
 
         document.getElementById('prevBtn').disabled = (currentPage === 1);
         document.getElementById('nextBtn').disabled = (currentPage === totalPages);
